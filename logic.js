@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const xScoreDisplay = document.querySelector('.display-x');
     const oScoreDisplay = document.querySelector('.display-o');
     const tieScoreDisplay = document.querySelector('.display-tie');
-
+    document.getElementById("info").innerHTML = "Click on start to begin playing"
     // localStorage NaN check
     if(localStorage.getItem("X") === null){
         localStorage.setItem("X", 0)
@@ -71,11 +71,17 @@ window.addEventListener('DOMContentLoaded', () => {
         startButton.disabled = true;
         abandonButton.setAttribute("style", "background-color: #FF3860;");
         startButton.setAttribute("style", "background-color: grey;");
+        document.getElementById("info").innerHTML = "";
     });
 
     // Enable startGame button after player has abandoned the game
     abandonButton.addEventListener("click", function(){
         toggleBtns();
+    });
+
+    resetButton.addEventListener("click", function(){
+        toggleBtns();
+        document.getElementById('info').innerHTML = 'Click on start to begin playing'
     });
 
     const toggleBtns =  () => {
