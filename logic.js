@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Enable startGame button after player has abandoned the game
     abandonButton.addEventListener("click", function(){
-        toggleBtns();
+        // toggleBtns();
     });
 
     resetButton.addEventListener("click", function(){
@@ -110,6 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (roundWon) {
             announce(currentPlayer === 'X' ? PLAYERX_WON : PLAYERO_WON);
             isGameActive = false;
+            // toggleBtns();
             return;
         }
 
@@ -140,10 +141,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 } else{
                     announcer.innerHTML = 'Player <span class="playerO">O</span> has abandoned! (-1 from score)';
                 }
+                // toggleBtns();
                 break;
         }
         updateScores();
-        toggleBtns();
+        abandonButton.disabled = true;
+        abandonButton.setAttribute("style", "background-color: grey;");
+        // toggleBtns();
         announcer.classList.remove('hide');
     };
 
