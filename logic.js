@@ -174,13 +174,13 @@ window.addEventListener('DOMContentLoaded', () => {
         if(parseInt(localStorage.getItem("X"))<0){
             xScoreDisplay.setAttribute("style", "color: #FF3860;");
         } else {
-            xScoreDisplay.setAttribute("style", "color: #09C372;;");
+            xScoreDisplay.setAttribute("style", "color: #09C372;");
         }
 
         if(parseInt(localStorage.getItem("O"))<0){
             oScoreDisplay.setAttribute("style", "color: #FF3860;");
         } else {
-            oScoreDisplay.setAttribute("style", "color: #09C372;;");
+            oScoreDisplay.setAttribute("style", "color: #09C372;");
         }
     }
 
@@ -237,6 +237,9 @@ window.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem("O", 0);
         localStorage.setItem("TIE", 0);
         updateScores();
+        resetBoard();
+        toggleBtns();
+        document.getElementById('info').innerHTML = 'Click on start to begin playing'
     }
     
 
