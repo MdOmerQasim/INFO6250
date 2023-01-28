@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <script src="./logic.js"></script>
+    <title>Assignment 02</title>
+  </head>
+  <body>
+    <main class="background">
+
+        <section class="title">
+            <h1>Tic Tac Toe</h1>
+            <h5 id = "info">Click on start to begin playing</h3>
+        </section>
+        
+        <section class="display">
+            Player <span class="display-player playerX">X</span>'s turn
+        </section>
+
+        <section class="container">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </section>
+
+        <section class="display announcer hide"></section>
+
+        <section class="controls">
+            <button id="start" class="hide">Start</button>
+            <button id="abandon" class="hide">Abandon</button>
+            <button id="reset"class="hide">Reset</button>
+        </section>
+
+        <section class="display">
+            <table class="display">
+                <tr>
+                    <td>Player X - <span class="display-x playerX">0</span></td>
+                    <td>Tie - <span class="display-tie playerX">0</span></td>
+                    <td>Player O - <span class="display-o playerX">0</span></td>
+                </tr>
+            </table> 
+        </section>
+
+        <section class="controls">
+            <button id="refresh">Refresh Scoreboard</button>
+        </section>
+
+    </main>
+  </body>
+</html>
