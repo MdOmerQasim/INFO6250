@@ -179,12 +179,13 @@ window.addEventListener("DOMContentLoaded", () => {
           }
 
           if (!board.includes("")) {
+            abandonButton.classList.add("hide");
             announce(TIE);
           }
         });
       })
       .catch((error) => {
-        console.log("Inside error - fallback");
+        console.log("Enable offline game");
         let roundWon = false;
         for (let i = 0; i <= 7; i++) {
           const winCondition = winningConditions[i];
@@ -208,6 +209,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
         if (!board.includes("")) {
+          abandonButton.classList.add("hide");
           announce(TIE);
         }
       });
@@ -224,7 +226,6 @@ window.addEventListener("DOMContentLoaded", () => {
       case PLAYERO_WON:
         announcer.innerHTML = 'Player <span class="playerX">X</span> Won';
         updatePlayerScoreData("X");
-        console.log("AFTER");
         break;
       case PLAYERX_WON:
         announcer.innerHTML = 'Player <span class="playerO">O</span> Won';
@@ -356,11 +357,10 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       })
       .catch((error) => {
-        console.log("Inside get catch");
         xScore = localStorage.getItem("X");
         oScore = localStorage.getItem("O");
         tieScore = localStorage.getItem("TIE");
-        console.log("After catch - " + xScore + " " + oScore + " " + tieScore);
+
         xScoreDisplay.innerText = xScore.toString();
         oScoreDisplay.innerText = oScore.toString();
         tieScoreDisplay.innerText = tieScore.toString();
@@ -397,7 +397,6 @@ window.addEventListener("DOMContentLoaded", () => {
     fetch("http://localhost:5002/updatePlayerScoreData", requestOptions)
       .then(function (response) {
         response.json().then(function (data) {
-          console.log(data);
           xScore = data.xScore;
           oScore = data.oScore;
           tieScore = data.tieScore;
