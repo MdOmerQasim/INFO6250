@@ -82,6 +82,8 @@ public class FrontController extends HttpServlet {
 					dispatcher = "/WEB-INF/admin/deleteUserStatus.jsp";
 				} else if ("profile".equals(action)) {
 					dispatcher = "adminProfile";
+				} else if ("viewAppointment".equals(action)) {
+					dispatcher = "adminViewAppointment";
 				} 
 
 			}

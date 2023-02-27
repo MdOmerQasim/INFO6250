@@ -169,6 +169,7 @@
 		<li class="center">WeCare | <% out.append(userSession.getUsername()); %></li>
       	<li><a href="logout">Logout</a></li>
 		<li><a href="controller?action=profile">Profile</a></li>
+		<li><a href="controller?action=viewAppointment">View Appointments</a></li>
       	<li><a href="controller?action=viewUsers">View Users</a></li>
 		<li><a href="adminDashboard">Dashboard</a></li>
 	</ul>
