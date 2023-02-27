@@ -81,6 +81,7 @@
     </svg>
     <h1 class="success-message__title">Your appointment is confirmed!</h1>
     <div class="success-message__content">
+    	<p>We have sent you an email confirmation!</p>
         <p>You will be redirected in 5 seconds.</p>
     </div>
 </div>
